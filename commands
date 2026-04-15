@@ -1,0 +1,31 @@
+python3 -m pipeline \
+    --project vz-it-np-gudv-dev-dtwndo-0 \
+    --runner DataflowRunner \
+    --region us-east4 \
+    --sdk_container_image us-east4-docker.pkg.dev/vz-it-np-gudv-dev-dtwndo-0/fwa-sssot/py39beam26:1.0.0 \
+    --template_location gs://fwa_ssot_spanner_poc/cicd/dataflow/wc/templates/spannerwb \
+    --temp_location gs://fwa_ssot_spanner_poc/cicd/dataflow/wc/wc/temp/spannerwb \
+    --staging_location gs://fwa_ssot_spanner_poc/cicd/dataflow/wc/stg/spannerwb \
+    --spanner_project 'vz-it-np-jpuv-dev-anpdo-0' \
+    --spanner_dataset 'network_wls_model' \
+    --pubsub_subscription_name 'projects/vz-it-np-gudv-dev-dtwndo-0/subscriptions/spanner-poc-sub'  \
+    --pubsub_topic 'projects/vz-it-np-gudv-dev-dtwndo-0/topics/ghjv' \
+    --spanner_instance 'anp-spanner-instance' \
+    --spanner_table 'streaming_pivote' \
+    --expansion_service 'localhost:50768' \
+    --bq_dataset 'test_dataset' \
+    --bq_project 'vz-it-np-gudv-dev-dtwndo-0' \
+    --bq_table 'spanner'
+
+gcloud dataflow jobs run spannerwb \
+    --gcs-location gs://fwa_ssot_spanner_poc/cicd/dataflow/wc/templates/spannerwb \
+    --region us-east4 \
+    --num-workers 1 \
+    --max-workers 1 \
+    --worker-machine-type n4-standard-2 \
+    --disable-public-ips \
+    --service-account-email sa-dev-gudv-app-dtwndo-0@vz-it-np-gudv-dev-dtwndo-0.iam.gserviceaccount.com \
+    --network=shared-np-east \
+    --additional-experiments=use_runner_v2 \
+    --dataflow-kms-key=projects/vz-it-np-d0sv-vsadkms-0/locations/us-east4/keyRings/vz-it-np-kr-aid/cryptoKeys/vz-it-np-kms-gudv \
+    --subnetwork=https://www.googleapis.com/compute/v1/projects/vz-it-np-exhv-sharedvpc-228116/regions/us-east4/subnetworks/shared-np-east-green-subnet-2
