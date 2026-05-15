@@ -1,0 +1,314 @@
+🚀 DSPy Comparison: Normal vs ChainOfThought vs ReAct
+======================================================================
+
+======================================================================
+Question 1: What happens if I drink coffee at night?
+======================================================================
+
+[1] NORMAL MODE (No DSPy)
+----------------------------------------------------------------------
+Prompt: Answer the question: What happens if I drink coffee at night?
+Answer: Drinking coffee at night can have several effects on your body, primarily because of its caffeine content. Here are some potential impacts:
+
+1. **Disrupted Sleep**: Caffeine is a stimulant that can interfere with your ability to fall asleep and stay asleep. Consuming coffee in the evening can delay the onset of sleep and reduce overall sleep quality.
+
+2. **Increased Alertness**: Caffeine can enhance alertness and focus, which may be beneficial at times but can be counterproductive if you're trying to wind down for the night.
+
+3. **Increased Heart Rate**: For some individuals, caffeine can lead to a faster heart rate or palpitations, which can be uncomfortable, especially when trying to relax before bed.
+
+4. **Bathroom Trips**: Caffeine has a diuretic effect, which may lead to increased urination. This could result in mid-night trips to the bathroom, further disrupting sleep.
+
+5. **Potential Anxiety**: If you're sensitive to caffeine,
+Time: 4.390s | Tokens: 220
+
+[2] DSPy ChainOfThought Mode
+----------------------------------------------------------------------
+Prompt: System: Your input fields are:
+1. `question` (str):
+Your output fields are:
+1. `reasoning` (str): Step-by-step thought process
+2. `answer` (str): Final concise answer
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## reasoning ## ]]
+{reasoning}
+
+[[ ## answer ## ]]
+{answer}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Answer the question with reasoning.
+User: [[ ## question ## ]]
+What happens if I drink coffee at night?
+
+Respond with the corresponding output fields, starting with the field `[[ ## reasoning ## ]]`, then `[[ ## answer ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+Reasoning: When you drink coffee at night, the primary effect comes from its caffeine content, which is a stimulant. Caffeine works by blocking adenosine receptors in the brain; adenosine is a neurotransmitter that promotes sleep. By inhibiting adenosine, caffeine can increase alertness and reduce the feeling of tiredness. Consuming coffee in the evening can lead to difficulty falling asleep, lower sleep quality, and could extend the time it takes to fall asleep. It can also cause increased nighttime awakenings and can disrupt the overall sleep cycle. Furthermore, individuals have different tolerances to caffeine, so the impact may vary from person to person. In general, it's advisable to avoid caffeine in the hours leading up to bedtime to promote better sleep quality.
+Answer: Drinking coffee at night can lead to difficulty falling asleep, reduced sleep quality, and may disrupt the sleep cycle due to caffeine's stimulating effects.
+Time: 0.218s | Tokens: 146
+
+[3] DSPy ReAct Mode
+----------------------------------------------------------------------
+Prompt: System: Your input fields are:
+1. `question` (str): 
+2. `trajectory` (str):
+Your output fields are:
+1. `reasoning` (str): Step-by-step thought process
+2. `answer` (str): Final concise answer
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## trajectory ## ]]
+{trajectory}
+
+[[ ## reasoning ## ]]
+{reasoning}
+
+[[ ## answer ## ]]
+{answer}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Answer the question with reasoning.
+User: [[ ## question ## ]]
+What happens if I drink coffee at night?
+
+[[ ## trajectory ## ]]
+[[ ## thought_0 ## ]]
+Drinking coffee at night can have various effects, primarily due to its caffeine content. I need to consider how caffeine affects sleep, alertness, and overall health when consumed in the evening. It's essential to gather more specific information regarding these effects to provide a comprehensive answer.
+
+[[ ## tool_name_0 ## ]]
+finish
+
+[[ ## tool_args_0 ## ]]
+{}
+
+[[ ## observation_0 ## ]]
+Completed.
+
+Respond with the corresponding output fields, starting with the field `[[ ## reasoning ## ]]`, then `[[ ## answer ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+Answer: Drinking coffee at night can disrupt sleep due to caffeine, making it harder to fall asleep and reducing sleep quality, leading to potential insomnia. It is generally advised to avoid evening coffee for better sleep.
+Time: 0.010s | Tokens: 240
+
+======================================================================
+Question 2: Explain possible reasons for laptop heating.
+======================================================================
+
+[1] NORMAL MODE (No DSPy)
+----------------------------------------------------------------------
+Prompt: Answer the question: Explain possible reasons for laptop heating.
+Answer: Laptops can heat up for a variety of reasons, and it's important to understand these factors to maintain performance and longevity. Here are some common reasons for laptop heating:
+
+1. **Poor Ventilation**: Laptops usually have vents to allow airflow for cooling. If these vents are blocked by dust, dirt, or obstructive surfaces (like using the laptop on a bed or couch), it can trap heat inside.
+
+2. **High Processor Usage**: Running resource-intensive applications, such as games, video editing software, or running multiple programs simultaneously can significantly increase CPU and GPU usage, generating more heat.
+
+3. **Dust Accumulation**: Over time, dust can accumulate inside the laptop, particularly in the cooling fans and heat sinks. This reduces the cooling efficiency and leads to overheating.
+
+4. **Old or Failing Hardware**: Aging components, especially fans that are no longer functioning properly or thermal paste that has degraded, can lead to insufficient heat dissipation.
+
+5. **Environmental Factors
+Time: 3.705s | Tokens: 218
+
+[2] DSPy ChainOfThought Mode
+----------------------------------------------------------------------
+Prompt: System: Your input fields are:
+1. `question` (str):
+Your output fields are:
+1. `reasoning` (str): Step-by-step thought process
+2. `answer` (str): Final concise answer
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## reasoning ## ]]
+{reasoning}
+
+[[ ## answer ## ]]
+{answer}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Answer the question with reasoning.
+User: [[ ## question ## ]]
+Explain possible reasons for laptop heating.
+
+Respond with the corresponding output fields, starting with the field `[[ ## reasoning ## ]]`, then `[[ ## answer ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+Reasoning: Laptops can heat up for several reasons:
+
+1. **High Processing Load**: When a laptop is running resource-intensive applications, such as video editing software or gaming, the CPU and GPU work harder, generating more heat.
+
+2. **Poor Ventilation**: If the laptop vents are blocked or covered (e.g., by soft surfaces like beds or laps), airflow is restricted, preventing heat dissipation.
+
+3. **Dust Accumulation**: Over time, dust can accumulate in the fans and vents, which can hinder airflow, leading to higher internal temperatures.
+
+4. **Aging Hardware**: Older laptops may have components that are less efficient and generate more heat. Also, aging thermal paste on the CPU and GPU may not effectively transfer heat away from these components.
+
+5. **Battery Issues**: A malfunctioning battery can also generate excess heat during charging or when experiencing short-circuits, leading to overheating.
+
+6. **High Ambient Temperature**: If the surrounding environment is hot or humid, it can affect the cooling ability of the laptop.
+
+7. **Software Issues**: Some applications or processes may not release CPU power efficiently, leading to unnecessary CPU load that can cause overheating.
+
+Identifying the specific reason for a particular laptop's heating issues can often involve checking for these common factors.
+Answer: Possible reasons for laptop heating include high processing load, poor ventilation, dust accumulation, aging hardware, battery issues, high ambient temperature, and software inefficiencies.
+Time: 0.002s | Tokens: 143
+
+[3] DSPy ReAct Mode
+----------------------------------------------------------------------
+Prompt: System: Your input fields are:
+1. `question` (str): 
+2. `trajectory` (str):
+Your output fields are:
+1. `reasoning` (str): Step-by-step thought process
+2. `answer` (str): Final concise answer
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## trajectory ## ]]
+{trajectory}
+
+[[ ## reasoning ## ]]
+{reasoning}
+
+[[ ## answer ## ]]
+{answer}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Answer the question with reasoning.
+User: [[ ## question ## ]]
+Explain possible reasons for laptop heating.
+
+[[ ## trajectory ## ]]
+[[ ## thought_0 ## ]]
+To explain possible reasons for laptop heating, I need to consider both hardware and software factors that can contribute to this issue. Common reasons include high CPU usage, inadequate cooling systems, dust accumulation, high ambient temperature, and running resource-intensive applications. I can compile these points into a coherent explanation after reviewing the major causes.
+
+[[ ## tool_name_0 ## ]]
+finish
+
+[[ ## tool_args_0 ## ]]
+{}
+
+[[ ## observation_0 ## ]]
+Completed.
+
+Respond with the corresponding output fields, starting with the field `[[ ## reasoning ## ]]`, then `[[ ## answer ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+Answer: Possible reasons for laptop heating include high CPU usage, inadequate cooling systems, dust accumulation, high ambient temperatures, and running resource-intensive applications.
+Time: 4.301s | Tokens: 232
+
+======================================================================
+Question 3: What famous people are from Hyderabad?
+======================================================================
+
+[1] NORMAL MODE (No DSPy)
+----------------------------------------------------------------------
+Prompt: Answer the question: What famous people are from Hyderabad?
+Answer: Hyderabad has been home to several famous personalities across various fields. Some notable individuals from the city include:
+
+1. **Allu Arjun** - A popular Telugu film actor known for his work in the South Indian cinema.
+2. **Sania Mirza** - An acclaimed professional tennis player who has won several Grand Slam titles in doubles and mixed doubles.
+3. **Mohammed Azharuddin** - A former cricketer and captain of the Indian national team, known for his elegant batting style.
+4. **K. R. Narayanan** - The 10th President of India, who served from 1997 to 2002.
+5. **Ram Gopal Varma** - A well-known film director, screenwriter, and producer, known for his work in Hindi and Telugu cinema.
+6. **N. T. Rama Rao Jr. (Jr. NTR)** - A popular actor and politician in the Telugu film industry.
+7. **Sushma
+Time: 3.762s | Tokens: 218
+
+[2] DSPy ChainOfThought Mode
+----------------------------------------------------------------------
+Prompt: System: Your input fields are:
+1. `question` (str):
+Your output fields are:
+1. `reasoning` (str): Step-by-step thought process
+2. `answer` (str): Final concise answer
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## reasoning ## ]]
+{reasoning}
+
+[[ ## answer ## ]]
+{answer}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Answer the question with reasoning.
+User: [[ ## question ## ]]
+What famous people are from Hyderabad?
+
+Respond with the corresponding output fields, starting with the field `[[ ## reasoning ## ]]`, then `[[ ## answer ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+Reasoning: Hyderabad, a major city in India, has produced numerous notable individuals across various fields such as film, politics, sports, and literature. In the film industry, the Telugu film star Mahesh Babu and actress Samantha Ruth Prabhu are among the most recognized personalities. In politics, former President A. P. J. Abdul Kalam is a prominent figure, known for his contributions to science and education. Additionally, in sports, renowned cricketer VVS Laxman hails from Hyderabad. The city is also home to many successful entrepreneurs and tech leaders, notably Satya Nadella, the CEO of Microsoft. Each of these individuals has made significant contributions in their respective fields, bringing recognition to Hyderabad.
+Answer: Famous people from Hyderabad include film stars Mahesh Babu and Samantha Ruth Prabhu, former President A. P. J. Abdul Kalam, cricketer VVS Laxman, and Satya Nadella, CEO of Microsoft.
+Time: 3.132s | Tokens: 149
+
+[3] DSPy ReAct Mode
+----------------------------------------------------------------------
+Prompt: System: Your input fields are:
+1. `question` (str): 
+2. `trajectory` (str):
+Your output fields are:
+1. `reasoning` (str): Step-by-step thought process
+2. `answer` (str): Final concise answer
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## trajectory ## ]]
+{trajectory}
+
+[[ ## reasoning ## ]]
+{reasoning}
+
+[[ ## answer ## ]]
+{answer}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Answer the question with reasoning.
+User: [[ ## question ## ]]
+What famous people are from Hyderabad?
+
+[[ ## trajectory ## ]]
+[[ ## thought_0 ## ]]
+I need to gather information about famous individuals from Hyderabad. This likely includes actors, political figures, intellectuals, and sports personalities. I should compile a list of notable names associated with the city to formulate a comprehensive answer.
+
+[[ ## tool_name_0 ## ]]
+finish
+
+[[ ## tool_args_0 ## ]]
+{}
+
+[[ ## observation_0 ## ]]
+Completed.
+
+Respond with the corresponding output fields, starting with the field `[[ ## reasoning ## ]]`, then `[[ ## answer ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+Answer: Famous individuals from Hyderabad include actors Mahesh Babu and Zoya Akhtar, politicians like N. Chandrababu Naidu, intellectual Dr. A.P.J. Abdul Kalam, and sports personalities such as Saina Nehwal and Gopichand.
+Time: 6.347s | Tokens: 224
+
+
+======================================================================
+STATISTICS SUMMARY
+======================================================================
+
+Mode                      Total Time      Total Tokens    Queries   
+-----------------------------------------------------------------
+Normal (No DSPy)          11.857        s 656            3         
+DSPy ChainOfThought       3.353         s 438            3         
+DSPy ReAct                10.658        s 696            3         
+
+-----------------------------------------------------------------
+✓ Best by Speed: DSPy ChainOfThought
+
+✓ Comparison complete!
