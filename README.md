@@ -1,0 +1,1 @@
+This brnach is for documenting RAG, LLM and LangChain related concepts, mostly colab, ipynb notebooks.
