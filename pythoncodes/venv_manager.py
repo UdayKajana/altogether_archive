@@ -43,6 +43,7 @@ def install_deps(packages: list[str]) -> None:
 
     missing = _check_packages(packages)
 
+    failed = []
     for pkg in missing:
         name = re.split(r"[><=!~\s\[]", pkg)[0].strip()
         print(f"[deps] installing {name}...", end="", flush=True)
@@ -53,7 +54,11 @@ def install_deps(packages: list[str]) -> None:
         )
         if result.returncode != 0:
             print(f" failed!\n[deps] error: {result.stderr.strip()}")
-            raise subprocess.CalledProcessError(result.returncode, "pip install")
-        print(" done!")
+            failed.append(name)
+        else:
+            print(" done!")
+
+    if failed:
+        raise RuntimeError(f"[deps] failed to install: {', '.join(failed)}")
 
     _touch_cache()

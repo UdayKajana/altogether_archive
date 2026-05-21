@@ -57,21 +57,21 @@ class AgentState(TypedDict):
 def router_agent(state: AgentState):
 
     query = state["query"].lower()
-
+    print(f"Routing query: {query}")
     outputs = []
 
     if "weather" in query:
         result = weather_tool.invoke("Chennai")
         outputs.append(result)
-
+    print(outputs)
     if "stock" in query or "share" in query:
         result = stock_tool.invoke("Apple")
         outputs.append(result)
-
+    print(outputs)
     if "calculate" in query or "math" in query:
         result = math_tool.invoke("25 * 4")
         outputs.append(result)
-
+    print(outputs)
     return {
         "tool_outputs": outputs
     }
@@ -83,6 +83,7 @@ def response_agent(state: AgentState):
     
     prompt = f"""
     User Query:
+    
     {state['query']}
 
     Tool Results:
